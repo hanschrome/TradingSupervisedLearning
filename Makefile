@@ -3,7 +3,8 @@ help:
 	@echo "run - Run the container"
 build:
 	@echo "Building docker image..."
-	docker build . -t python3-buster
+	docker rm tradingSupervisedLearning || echo 'ok'
+	docker build . -t trading-supervised-learning
 run:
 	@echo "Running..."
-	docker run -it -v $$(pwd):/app python3-buster
+	docker run -it -v $$(pwd):/app trading-supervised-learning
